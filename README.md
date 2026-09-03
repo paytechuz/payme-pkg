@@ -36,11 +36,6 @@
 pip install payme-pkg
 ```
 
-> **No license key.** Since `3.4.0` payme-pkg is fully open source under the
-> MIT license — there is no `PAYTECH_LICENSE_API_KEY` and no `license_api_key`
-> argument any more. Upgrading from `3.3.x`? Delete both; every public import
-> stays the same. See the [changelog](CHANGELOG.md).
-
 ## Table of Contents
 
 - [Installation](#installation)

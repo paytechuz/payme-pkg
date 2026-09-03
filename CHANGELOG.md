@@ -7,19 +7,15 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [3.4.0]
 
 The library is now fully open source. Everything it does at runtime is in this
-repository: pure Python, no compiled extensions, no license key, no telemetry.
+repository: pure Python, no compiled extensions. Nothing in the package
+contacts an external service other than Payme itself.
 
 ### Removed
 
-- **License validation.** `payme/licensing.py` is gone, along with the
-  `PAYTECH_LICENSE_API_KEY` setting and environment variable, the key check
-  that ran when the Django app started and when a `Payme` client was created,
-  and the usage request sent after every successful payment. Nothing in the
-  package contacts an external service other than Payme itself.
 - **Compiled distribution.** Wheels are `py3-none-any` instead of
   per-platform binaries. The Cython build pipeline, the Docker build image and
   the `.so` artifacts are removed.
-- The `environs` dependency, which only the license check used.
+- The `environs` dependency, which nothing in the package uses any more.
 
 ### Changed
 
@@ -32,10 +28,7 @@ repository: pure Python, no compiled extensions, no license key, no telemetry.
 - Every public import: `from payme import Payme`,
   `from payme.views import PaymeWebHookAPIView`, the `payme` Django app, its
   models, migrations and admin.
-- `UnknownPartnerError` stays — it is Payme's own `-31601` error, unrelated to
-  licensing.
 
 ## [3.3.2] and earlier
 
-Released as compiled wheels requiring `PAYTECH_LICENSE_API_KEY`. See the git
-history for details.
+Released as compiled wheels. See the git history for details.
