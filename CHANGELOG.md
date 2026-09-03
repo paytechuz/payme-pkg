@@ -4,6 +4,11 @@ All notable changes to this project are documented here.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [3.4.1]
+
+Documentation only. The README and this changelog were trimmed; the package
+itself is unchanged from `3.4.0`.
+
 ## [3.4.0]
 
 The library is now fully open source. Everything it does at runtime is in this
