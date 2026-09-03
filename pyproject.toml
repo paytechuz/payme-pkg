@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "payme-pkg"
+description = "Payme SDK for Python — Merchant API, Subscribe API and a Django webhook view"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "Muhammadali Akbarov", email = "muhammadali17abc@gmail.com"}
+]
+keywords = [
+    "payme", "paymeuz", "paycomuz", "payme-pkg", "payme-api",
+    "payme-merchant", "merchant-api", "subscribe-api",
+    "uzbekistan", "payment", "payment-gateway", "django"
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Framework :: Django",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Office/Business :: Financial",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    "requests==2.*",
+    "djangorestframework==3.*",
+]
+dynamic = ["version"]
+
+[project.urls]
+Homepage = "https://github.com/PayTechUz/payme-pkg"
+Documentation = "https://pay-tech.uz"
+Source = "https://github.com/PayTechUz/payme-pkg"
+Issues = "https://github.com/PayTechUz/payme-pkg/issues"
+
+[tool.setuptools.dynamic]
+version = {attr = "payme.__version__"}
+
+[tool.setuptools.packages.find]
+include = ["payme*"]

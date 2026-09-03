@@ -36,6 +36,11 @@
 pip install payme-pkg
 ```
 
+> **No license key.** Since `3.4.0` payme-pkg is fully open source under the
+> MIT license — there is no `PAYTECH_LICENSE_API_KEY` and no `license_api_key`
+> argument any more. Upgrading from `3.3.x`? Delete both; every public import
+> stays the same. See the [changelog](CHANGELOG.md).
+
 ## Table of Contents
 
 - [Installation](#installation)
@@ -75,15 +80,11 @@ INSTALLED_APPS = [
 ]
 ```
 
-Add `'payme'` credentials inside to settings.py (if you have api key)
+Add `'payme'` credentials inside to settings.py
 
 One time payment (Однаразовый платеж) configuration settings.py
 
-Example project: https://github.com/PayTechUz/shop-backend
 ```python
-
-PAYTECH_API_KEY = "your-api-key" # contact with @muhammadali_me on Telegram for getting api key 
-
 PAYME_ID = "your-payme-id"
 PAYME_KEY = "your-payme-key"
 PAYME_ACCOUNT_FIELD = "order_id"
@@ -152,7 +153,6 @@ from payme import Payme
 payme = Payme(
     payme_id="your-payme-id",
     is_test_mode=True,  # Optional: defaults to False
-    license_api_key="your-license-key"  # Contact @muhammadali_me on Telegram
 )
 
 # Full initialization (for all features including Receipts API)
@@ -160,7 +160,6 @@ payme = Payme(
     payme_id="your-payme-id",
     payme_key="your-payme-key",  # Required for Receipts API
     is_test_mode=True,
-    license_api_key="your-license-key"
 )
 ```
 
